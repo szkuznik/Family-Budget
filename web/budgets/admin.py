@@ -23,6 +23,7 @@ class BudgetAdmin(admin.ModelAdmin):
     fields = ['name', 'users', 'transactions_sum']
     readonly_fields = ['transactions_sum']
     filter_horizontal = ['users']
+    search_fields = ['name']
     inlines = [TransactionAdminInline]
 
     def save_model(self, request, obj, form, change):
